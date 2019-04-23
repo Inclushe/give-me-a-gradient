@@ -2,9 +2,8 @@
 
 ```bash
 git clone
-rm -r .git
 # Add this to your .bashrc/.zshrc file
-alias pmkdir="cp -r ~/parcel-template $1"
+echo 'alias pmkdir="cp -r ~/parcel-template $1"' >> ~/.zshrc
 
 # Restart your terminal
 . ~/.zshrc
