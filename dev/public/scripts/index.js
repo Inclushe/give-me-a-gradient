@@ -39,7 +39,7 @@ function generatePaletteFromImage (imagePath, maximumColorCount) {
 }
 
 function renderCanvas (imagePath) {
-  generatePaletteFromImage(imagePath, 4)
+  generatePaletteFromImage(imagePath, 5)
     .then((palette) => {
       // img
       
@@ -61,10 +61,11 @@ function renderCanvas (imagePath) {
       
       let startCircleRadius = 0
       let endCircleRadius = canvas.width
+      let offset = 1
       
       var gradient = ctx.createRadialGradient(0, 0, startCircleRadius, 0, 0, endCircleRadius)
       // Add three color stops
-      gradient.addColorStop(0, `rgb(${palette[0].join(', ')})`)
+      gradient.addColorStop(0, `rgb(${palette[0 + offset].join(', ')})`)
       gradient.addColorStop(1, 'transparent')
       
       // Set the fill style and draw a rectangle
@@ -74,7 +75,7 @@ function renderCanvas (imagePath) {
       gradient = ctx.createRadialGradient(canvas.width, 0, startCircleRadius, canvas.width, 0, endCircleRadius)
       
       // Add three color stops
-      gradient.addColorStop(0, `rgb(${palette[1].join(', ')})`)
+      gradient.addColorStop(0, `rgb(${palette[1 + offset].join(', ')})`)
       gradient.addColorStop(1, 'transparent')
       
       // Set the fill style and draw a rectangle
@@ -84,7 +85,7 @@ function renderCanvas (imagePath) {
       gradient = ctx.createRadialGradient(0, canvas.height, startCircleRadius, 0, canvas.height, endCircleRadius)
       
       // Add three color stops
-      gradient.addColorStop(0, `rgb(${palette[2].join(', ')})`)
+      gradient.addColorStop(0, `rgb(${palette[2 + offset].join(', ')})`)
       gradient.addColorStop(1, 'transparent')
       
       // Set the fill style and draw a rectangle
@@ -94,7 +95,7 @@ function renderCanvas (imagePath) {
       gradient = ctx.createRadialGradient(canvas.width, canvas.height, startCircleRadius, canvas.width, canvas.height, endCircleRadius)
       
       // Add three color stops
-      gradient.addColorStop(0, `rgb(${palette[3].join(', ')})`)
+      gradient.addColorStop(0, `rgb(${palette[3 + offset].join(', ')})`)
       gradient.addColorStop(1, 'transparent')
       
       // Set the fill style and draw a rectangle
