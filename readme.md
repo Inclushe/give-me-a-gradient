@@ -14,7 +14,7 @@ The function returns a promise with the data URI of the gradient image.
 <script src="https://cdn.jsdelivr.net/npm/give-me-a-gradient"></script>
 <script>
   renderGradient({
-    imagePath: 'https://i.imgur.com/Pk7R8lg.png',
+    imagePath: 'https://picsum.photos/id/1050/400/300',
     height: 480,
     width: 640
   })
@@ -33,7 +33,7 @@ The function returns a promise with the data URI of the gradient image.
 ```javascript
 const renderGradient = require('give-me-a-gradient')
 renderGradient({
-  imagePath: 'https://i.imgur.com/Pk7R8lg.png',
+  imagePath: 'https://picsum.photos/id/1050/400/300',
   height: 480,
   width: 640
 })
@@ -47,7 +47,7 @@ renderGradient({
 ```javascript
 import renderGradient from 'give-me-a-gradient'
 renderGradient({
-  imagePath: 'https://i.imgur.com/Pk7R8lg.png',
+  imagePath: 'https://picsum.photos/id/1050/400/300',
   height: 480,
   width: 640
 })
