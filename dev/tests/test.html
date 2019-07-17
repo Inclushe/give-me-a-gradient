@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Test using http-server from the root directory -->
+  <script src="../../dist/renderGradient.js"></script>
+  <script>
+    renderGradient({
+      imagePath: 'https://i.imgur.com/Pk7R8lg.png',
+      height: 480,
+      width: 640,
+    })
+      .then((imageURI) => {
+        document.body.innerHTML += `<img src='${imageURI}' />`
+      })
+  </script>
+</body>
+</html>

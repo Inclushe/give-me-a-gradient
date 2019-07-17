@@ -1,24 +1,88 @@
-# CHANGEME
+# give-me-a-gradient
+
+Gives you a gradient in the browser.
+The function returns a promise with the data URI of the gradient image.
 
 ## Install
-```bash
-git clone
-# Add this to your .bashrc/.zshrc file
-echo 'alias pmkdir="cp -r ~/parcel-template $1"' >> ~/.zshrc
 
-# Restart your terminal
-. ~/.zshrc
+### Browser
 
-yes | rm -r .git
-pmkdir [dir]
-pnpm i
-npm run watch
+#### UMD
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/give-me-a-gradient"></script>
+<script>
+  renderGradient({
+    imagePath: 'https://i.imgur.com/Pk7R8lg.png',
+    height: 480,
+    width: 640,
+  })
+    .then((imageURI) => {
+      document.body.innerHTML += `<img src='${imageURI}' />`
+    })
+</script>
 ```
 
-## Update
-```
-sudo pnpm i -g npm-check-updates
-ncu -u
+### Node
+
+```npm install give-me-a-gradient```
+
+#### CommonJS
+
+```javascript
+const renderGradient = require('give-me-a-gradient')
+renderGradient({
+  imagePath: 'https://i.imgur.com/Pk7R8lg.png',
+  height: 480,
+  width: 640,
+})
+  .then((imageURI) => {
+    document.body.innerHTML += `<img src='${imageURI}' />`
+  })
 ```
 
-Remember to change all instances of "CHANGEME"
+#### Module
+
+```javascript
+import renderGradient from 'give-me-a-gradient'
+renderGradient({
+  imagePath: 'https://i.imgur.com/Pk7R8lg.png',
+  height: 480,
+  width: 640,
+})
+  .then((imageURI) => {
+    document.body.innerHTML += `<img src='${imageURI}' />`
+  })
+```
+
+## Usage
+
+renderGradient must be passed with options.
+
+### Options
+
+#### imagePath *
+
+  URL of the image you want to make a gradient out of.
+
+#### height *
+  
+  Height of the desired gradient image.
+
+#### width *
+
+  Width of the desired gradient image.
+
+##### \* Required
+
+### Output
+
+- returns promise resolving with the data URI of the image
+
+## Build
+
+```$ npm run build```
+
+## Test
+
+```$ npm run test```

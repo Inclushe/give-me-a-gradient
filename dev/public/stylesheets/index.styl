@@ -1,5 +1,12 @@
 body
   // background: green; // for good
 
-canvas
-  filter: saturate(200%)
+img
+  padding: 4em
+  animation: rotate 10s linear infinite
+
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)

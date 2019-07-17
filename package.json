@@ -1,38 +1,40 @@
 {
-  "name": "CHANGEME",
-  "version": "0.0.1",
-  "description": "CHANGEME",
+  "name": "give-me-a-gradient",
+  "version": "0.1.0",
+  "description": "give-me-a-gradient",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:Inclushe/CHANGEME.git"
+    "url": "git@gitlab.com:Inclushe/give-me-a-gradient.git"
   },
   "main": "index.js",
+  "module": "index.js",
+  "unpkg": "dist/renderGradient.js",
+  "jsdelivr": "dist/renderGradient.js",
   "scripts": {
-    "watch": "parcel ./dev/index.pug  --port 8080",
-    "build": "parcel build ./dev/index.pug -d ./dist/ && cp ./dev/CNAME ./dist/CNAME",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch:browser": "parcel ./dev/index.pug -d ./temp --port 8080",
+    "build:browser": "parcel build ./dev/index.pug -d ./temp && cp ./dev/CNAME ./dist/CNAME",
+    "build": "parcel build --no-content-hash --global renderGradient --no-source-maps ./dev/public/scripts/renderGradient.js -d ./dist/ && parcel build --no-content-hash --no-source-maps ./dev/public/scripts/renderGradient.js -d ./dist/ --out-file renderGradient.common.js",
+    "test": "parcel build --no-content-hash --no-minify --global generatePaletteFromImage ./dev/public/scripts/generatePaletteFromImage.js -d ./temp && parcel build --no-content-hash --no-minify --global renderGradient ./dev/public/scripts/renderGradient.js -d ./temp && parcel build --no-content-hash --no-minify --global loadImage ./dev/public/scripts/loadImage.js -d ./temp && mocha dev/tests/",
+    "test:watch": "mocha --watch dev/tests/ --reporter min"
   },
   "author": "Inclushe",
-  "license": "ISC",
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.js",
-    "vuex": "./node_modules/vuex/dist/vuex.js"
-  },
-  "dependencies": {
-    "parcel": "^1.12.3",
-    "pug": "^2.0.3",
-    "quantize": "^1.0.2",
-    "rgbaster": "^2.1.1",
-    "stylus": "^0.54.5"
-  },
+  "license": "MIT",
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
+    "quantize": "^1.0.2",
+    "canvas": "^2.5.0",
+    "concurrently": "^4.1.1",
+    "jsdom": "^15.1.1",
+    "mocha": "^6.1.4",
+    "parcel": "^1.12.3",
+    "pug": "^2.0.4",
+    "stylus": "^0.54.5",
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^13.0.1",
     "eslint-import-resolver-node": "^0.3.2",
-    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^5.2.2"
+    "eslint-plugin-vue": "^5.2.3"
   }
 }
