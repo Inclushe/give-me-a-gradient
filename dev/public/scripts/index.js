@@ -1,4 +1,4 @@
-import images from '../images/*.jfif'
+import images from '../../tests/images/*.png'
 import renderGradientModule from '../../../index'
 const renderGradientCommon = require('../../../index')
 

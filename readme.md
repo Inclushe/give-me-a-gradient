@@ -15,7 +15,7 @@ The function returns a promise with the data URI of the gradient image.
   renderGradient({
     imagePath: 'https://i.imgur.com/Pk7R8lg.png',
     height: 480,
-    width: 640,
+    width: 640
   })
     .then((imageURI) => {
       document.body.innerHTML += `<img src='${imageURI}' />`
@@ -34,7 +34,7 @@ const renderGradient = require('give-me-a-gradient')
 renderGradient({
   imagePath: 'https://i.imgur.com/Pk7R8lg.png',
   height: 480,
-  width: 640,
+  width: 640
 })
   .then((imageURI) => {
     document.body.innerHTML += `<img src='${imageURI}' />`
@@ -48,7 +48,7 @@ import renderGradient from 'give-me-a-gradient'
 renderGradient({
   imagePath: 'https://i.imgur.com/Pk7R8lg.png',
   height: 480,
-  width: 640,
+  width: 640
 })
   .then((imageURI) => {
     document.body.innerHTML += `<img src='${imageURI}' />`
