@@ -1,6 +1,7 @@
 # give-me-a-gradient
 
-Gives you a gradient in the browser.
+Gives you a gradient based on the colors of an image. **(browser only for now)**
+
 The function returns a promise with the data URI of the gradient image.
 
 ## Install
