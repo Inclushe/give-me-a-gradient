@@ -14,7 +14,6 @@ module.exports = function (options) {
       maximumPaletteCount: 4
     })
       .then((palette) => {
-        console.log(palette, options.imagePath)
         if (palette === null) {
           palette = [[255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255]]
         }
