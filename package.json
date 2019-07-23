@@ -1,6 +1,6 @@
 {
   "name": "give-me-a-gradient",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Gives you a gradient based on the colors of an image.",
   "repository": {
     "type": "git",
@@ -35,9 +35,7 @@
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^5.2.3"
-  },
-  "dependencies": {
+    "eslint-plugin-vue": "^5.2.3",
     "colorthief": "^2.2.1",
     "jimp": "^0.6.4"
   }
