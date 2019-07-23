@@ -1,6 +1,6 @@
 {
   "name": "give-me-a-gradient",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Gives you a gradient based on the colors of an image.",
   "repository": {
     "type": "git",
