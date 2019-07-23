@@ -1,5 +1,5 @@
 import images from '../../tests/images/*.png'
-import renderGradientModule from '../../../index'
+import renderGradientModule from './renderGradient'
 const renderGradientCommon = require('../../../index')
 
 if (module.hot) {
@@ -19,13 +19,13 @@ Array.from(Object.keys(images)).forEach((key) => {
     })
 })
 
-Array.from(Object.keys(images)).forEach((key) => {
-  renderGradientCommon({
-    imagePath: images[key],
-    height: 200,
-    width: 200
-  })
-    .then((dataURL) => {
-      document.body.innerHTML += `<img src='${dataURL}'/>`
-    })
-})
+// Array.from(Object.keys(images)).forEach((key) => {
+//   renderGradientCommon({
+//     imagePath: images[key],
+//     height: 200,
+//     width: 200
+//   })
+//     .then((dataURL) => {
+//       document.body.innerHTML += `<img src='${dataURL}'/>`
+//     })
+// })
