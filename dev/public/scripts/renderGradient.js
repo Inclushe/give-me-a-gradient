@@ -5,13 +5,15 @@ const generatePaletteFromImage = require('./generatePaletteFromImage')
  * @param {string} options.imagePath
  * @param {number} options.height
  * @param {number} options.width
+ * @param {number} options.quality
  * @returns {promise} - Returns promise with data URL of the gradient
  */
 module.exports = function (options) {
   return new Promise((resolve, reject) => {
     generatePaletteFromImage({
       imagePath: options.imagePath,
-      maximumPaletteCount: 4
+      maximumPaletteCount: 4,
+      quality: options.quality || 20
     })
       .then((palette) => {
         if (palette === null) {

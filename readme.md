@@ -74,6 +74,10 @@ renderGradient must be passed with options.
 
   Width of the desired gradient image.
 
+#### quality
+
+  Quality of palette result.
+
 ##### \* Required
 
 ### Output
