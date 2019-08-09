@@ -31,28 +31,36 @@ module.exports = function (options) {
         ctx.fillRect(0, 0, canvas.width, canvas.height)
 
         var gradient = ctx.createRadialGradient(0, 0, startCircleRadius, 0, 0, endCircleRadius)
-        gradient.addColorStop(0, `rgb(${palette[0 + colorOffset].join(', ')})`)
-        gradient.addColorStop(1, 'transparent')
+        gradient.addColorStop(0, `rgba(${palette[0 + colorOffset].join(', ')}, 1)`)
+        gradient.addColorStop(1, `rgba(${palette[0 + colorOffset].join(', ')}, 0)`)
+        ctx.beginPath()
         ctx.fillStyle = gradient
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        ctx.arc(0, 0, endCircleRadius, 0, Math.PI * 2, false)
+        ctx.fill()
 
         gradient = ctx.createRadialGradient(canvas.width, 0, startCircleRadius, canvas.width, 0, endCircleRadius)
-        gradient.addColorStop(0, `rgb(${palette[1 + colorOffset].join(', ')})`)
-        gradient.addColorStop(1, 'transparent')
+        gradient.addColorStop(0, `rgba(${palette[1 + colorOffset].join(', ')}, 1)`)
+        gradient.addColorStop(1, `rgba(${palette[1 + colorOffset].join(', ')}, 0)`)
+        ctx.beginPath()
         ctx.fillStyle = gradient
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        ctx.arc(canvas.width, 0, endCircleRadius, 0, Math.PI * 2, false)
+        ctx.fill()
 
         gradient = ctx.createRadialGradient(0, canvas.height, startCircleRadius, 0, canvas.height, endCircleRadius)
-        gradient.addColorStop(0, `rgb(${palette[2 + colorOffset].join(', ')})`)
-        gradient.addColorStop(1, 'transparent')
+        gradient.addColorStop(0, `rgba(${palette[2 + colorOffset].join(', ')}, 1)`)
+        gradient.addColorStop(1, `rgba(${palette[2 + colorOffset].join(', ')}, 0)`)
+        ctx.beginPath()
         ctx.fillStyle = gradient
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        ctx.arc(0, canvas.height, endCircleRadius, 0, Math.PI * 2, false)
+        ctx.fill()
 
         gradient = ctx.createRadialGradient(canvas.width, canvas.height, startCircleRadius, canvas.width, canvas.height, endCircleRadius)
-        gradient.addColorStop(0, `rgb(${palette[3 + colorOffset].join(', ')})`)
-        gradient.addColorStop(1, 'transparent')
+        gradient.addColorStop(0, `rgba(${palette[3 + colorOffset].join(', ')}, 1)`)
+        gradient.addColorStop(1, `rgba(${palette[3 + colorOffset].join(', ')}, 0)`)
+        ctx.beginPath()
         ctx.fillStyle = gradient
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        ctx.arc(canvas.width, canvas.height, endCircleRadius, 0, Math.PI * 2, false)
+        ctx.fill()
 
         resolve(canvas.toDataURL())
       })
