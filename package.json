@@ -23,7 +23,7 @@
     "quantize": "^1.0.2",
     "canvas": "^2.5.0",
     "concurrently": "^4.1.1",
-    "jsdom": "^15.1.1",
+    "jsdom": "^16.5.0",
     "mocha": "^6.1.4",
     "parcel": "^1.12.3",
     "pug": "^2.0.4",
